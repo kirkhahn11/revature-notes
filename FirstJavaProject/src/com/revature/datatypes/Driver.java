@@ -1,5 +1,8 @@
 package com.revature.datatypes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Driver {
 	
 	/** 
@@ -52,5 +55,36 @@ public class Driver {
 		
 		// everything above ^ are java literals === hard-coded fixed-values assigned to variables
 		
+		int min; // variable declaration
+		min = Integer.MIN_VALUE; // static variables are available on a class level
+		
+		System.out.println("The minimum of an int is " + min);
+		
+		// Completely convert the primitive datatype into an Integer Object == autoboxing == primative -> object
+		
+		Integer obj1 = new Integer(20);
+		Integer obj2 = new Integer("20");
+		
+		// Question 1: do obj1 and obj2 have the same value? 
+		System.out.println(obj1.equals(obj2)); //true
+		
+		//Question 2: Do obj1 & obj2 point to the same address in memory?
+		System.out.println(obj1 == obj2); // false
+		
+		// unboxing = object to primitive
+		
+		Double dubObj = 15.45;
+		//convert that to a double primitive
+		double dubPrimative = dubObj; // implicit way of transforming it
+		
+		double dubPrimitive2 = Double.valueOf(dubObj); // explicit way
+		
+		//if I were to do something with
+		List<Double> dubList = new ArrayList<Double>();
+		
+		dubList.add(dubObj);
+		dubList.add(dubPrimative);
+		
+		// without using the wrapper classes (Double vs double) gives you access to methods with those classes
 	}
 }

@@ -35,6 +35,8 @@ public class GradingClacChallenge {
 		DecimalFormat df = new DecimalFormat("###.#");
 		
 		System.out.println("The Students Letter grade is " + letterGrade + ". That's " + df.format(grade) + "% !");
+		
+		scan.close();
 	}
 	
 	public static double calcGrade(double total, double actual) {
