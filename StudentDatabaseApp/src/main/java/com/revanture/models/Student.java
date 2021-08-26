@@ -93,6 +93,47 @@ public class Student {
 		
 		viewBalance();
 	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public int getGradeYear() {
+		return gradeYear;
+	}
+
+	public void setGradeYear(int gradeYear) {
+		this.gradeYear = gradeYear;
+	}
+
+	public String getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
+	}
+
+	public double getTuitionBalance() {
+		return tuitionBalance;
+	}
+
+	public void setTuitionBalance(double tuitionBalance) {
+		this.tuitionBalance = tuitionBalance;
+	}
+	
 	/**
 	 * Methods
 	 * enroll()
