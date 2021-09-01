@@ -1,9 +1,11 @@
 package com.revature.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Driver {
 
 	public static void main(String[] args) {
-		
 		// a reference type is a "custom type". This is a user defined class
 		Person p1 = new Person("Kirk", 30, 64, 160.56);
 		

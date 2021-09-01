@@ -24,9 +24,6 @@ public class Driver {
 		
 		System.out.println(numbers);
 		
-		System.out.println(Arrays.toString(numbers));
-		
-		
 		numbers[0] = 4;
 		numbers[2] = 30;
 		
@@ -45,6 +42,11 @@ public class Driver {
 		System.out.println(Arrays.toString(fruit));
 		Arrays.sort(fruit);
 		System.out.println(Arrays.toString(fruit));
+		
+		System.out.println(Arrays.toString(numbers));
+		for(int i = 0; i <= 5; i++) {
+			System.out.println(i);
+		}
 	}
 }
 

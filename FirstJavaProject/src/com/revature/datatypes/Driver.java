@@ -33,7 +33,8 @@ public class Driver {
 		
 		int x = 4; 
 		int y = 10; 
-		
+		int a = Integer.MAX_VALUE;
+		System.out.println(a+1);
 		System.out.println(x + y);
 		
 		// strings are not primitive data types. Technically a class
@@ -43,10 +44,10 @@ public class Driver {
 		
 		// casting === transforming datatypes
 		
-		byte a = 40; 
-		short b = a; // now has the value of byte a
-		int c = b;
-		double d = c; // this process is called widening (implicit casting)(small datatype into larger)
+//		byte a = 40; 
+//		short b; // now has the value of byte a
+//		int c = b;
+//		double d = c; // this process is called widening (implicit casting)(small datatype into larger)
 		
 		double dub = 900.9;
 		int myInt = (int) dub; // drops off the decimal myInt === 900
