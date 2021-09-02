@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: com.revature.UserServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.59 s <<< FAILURE! - in com.revature.UserServiceTest
+testRegisterUser_idGreaterThanZero_throwsException(com.revature.UserServiceTest)  Time elapsed: 0.249 s  <<< ERROR!
+java.lang.ExceptionInInitializerError
+	at com.revature.UserServiceTest.setUp(UserServiceTest.java:40)
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make protected final java.lang.Class java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain) throws java.lang.ClassFormatError accessible: module java.base does not "opens java.lang" to unnamed module @3f0aaff5
+	at com.revature.UserServiceTest.setUp(UserServiceTest.java:40)
+
+testRegisteredUser_returnsNewPk(com.revature.UserServiceTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.mockito.internal.creation.cglib.ClassImposterizer$3
+	at com.revature.UserServiceTest.setUp(UserServiceTest.java:40)
+

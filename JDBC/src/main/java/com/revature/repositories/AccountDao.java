@@ -20,8 +20,30 @@ public class AccountDao implements IAccountDao{
 
 	@Override
 	public int Insert(Account a) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			
+			String sql = "INSERT INTO kirkh.accounts (balance, acc_owner) VALUES (?, ?) RETURNING kirkh.accounts.id";
+			
+			//prepared statement
+			PreparedStatement stat = conn.prepareStatement(sql);
+			stat.setDouble(1, a.getBalance());
+			stat.setInt(2, a.getOwnerId());
+			
+			ResultSet rs;
+			if((rs = stat.executeQuery()) != null) {
+				
+				rs.next();
+				int id = rs.getInt(1);
+				return id;
+			}
+			
+		} catch(SQLException e) {
+			log.warn("Unable to insert Account");
+			e.printStackTrace();
+			return -1;
+		}
+		return -1;
 	}
 
 	@Override

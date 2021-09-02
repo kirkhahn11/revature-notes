@@ -38,3 +38,58 @@ CREATE TABLE kirkh.applications(
 	id SERIAL PRIMARY KEY,
 	app_owner INTEGER NOT NULL REFERENCES kirkh.users(id)
 );
+
+INSERT INTO kirkh.users(username, pwd, "user_role")
+	VALUES('Larry', 'secret', 'Employee'),
+			('Mary', '1234', 'Customer'),
+			('Barry', 'pass', 'Customer')
+			
+INSERT INTO kirkh.accounts (balance, acc_owner) 
+	VALUES (100.15, 1)
+	
+INSERT INTO kirkh.accounts (balance, acc_owner)
+	VALUES (100, 1), (200, 2), (2000, 2), (300, 3);
+	
+SELECT * FROM kirkh.accounts
+SELECT * FROM kirkh.users 
+
+
+SELECT * FROM kirkh.users_account_jt 
+
+--We need to trigger an insert of the necessary data into the account_jt table 
+
+CREATE OR REPLACE FUNCTION kirkh.auto_insert_into_jt() RETURNS TRIGGER AS 
+$BODY$
+BEGIN 
+
+	INSERT INTO 
+		kirkh.users_account_jt(acc_owner, account)
+		VALUES(NEW.acc_owner, NEW.id);
+	
+			RETURN NEW;
+END
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER trig
+	AFTER INSERT ON kirkh.accounts 
+	FOR EACH ROW 
+	EXECUTE PROCEDURE kirkh.auto_insert_into_jt();
+
+TRUNCATE TABLE kirkh.users CASCADE;
+TRUNCATE TABLE kirkh.accounts CASCADE;
+
+
+INSERT INTO kirkh.users(username, pwd, "user_role")
+	VALUES('Larry', 'secret', 'Employee'),
+			('Mary', '1234', 'Customer'),
+			('Barry', 'pass', 'Customer')
+	
+INSERT INTO kirkh.accounts (balance, acc_owner)
+	VALUES (100, 7), (200, 8), (2000, 8), (300, 9);
+--JOIN from the accounts table and the users_account_jt WHERE the accowner_id is the same as the userId
+
+SELECT kirkh.accounts.id, kirkh.accounts.balance FROM kirkh.accounts
+	INNER JOIN kirkh.users_account_jt 
+		ON kirkh.accounts.id = kirkh.users_account_jt.account
+			WHERE kirkh.users_account_jt.acc_owner = 8;

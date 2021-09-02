@@ -9,7 +9,12 @@ import com.revature.models.User;
 import com.revature.repositories.IUserDao;
 import com.revature.repositories.UserDao;
 
-public class UserService implements IUserService {
+
+public class UserService {
+	
+	//Directly injecting the interface specs and class that the Service depends on
+	//DEPENDENCT INJECTION
+	public IUserDao udao = new UserDao();
 
 	private static Logger log = Logger.getLogger(UserService.class);
 	// DEPENDENCT INJECTIONS

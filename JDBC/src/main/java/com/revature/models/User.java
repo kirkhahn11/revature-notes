@@ -2,6 +2,7 @@ package com.revature.models;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class User implements Serializable {
@@ -20,7 +21,6 @@ public class User implements Serializable {
 
 	public User(String username, String password, List<Account> accounts, Role role) {
 		super();
-		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.accounts = accounts;

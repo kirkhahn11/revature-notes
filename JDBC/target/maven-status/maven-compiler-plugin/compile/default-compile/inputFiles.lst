@@ -1,7 +1,13 @@
 /Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/models/Account.java
-/Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/models/Role.java
 /Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/repositories/UserDao.java
+/Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/exceptions/RegisterUserFailedException.java
+/Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/services/AccountService.java
+/Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/repositories/AccountDao.java
 /Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/models/User.java
+/Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/services/UserService.java
+/Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/models/Role.java
+/Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/repositories/IAccountDao.java
 /Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/util/ConnectionUtil.java
 /Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/App.java
+/Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/LoggingDriver.java
 /Users/kirkhahn/Desktop/revature-notes/JDBC/src/main/java/com/revature/repositories/IUserDao.java
