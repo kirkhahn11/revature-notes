@@ -20,7 +20,7 @@ import com.revature.LoggingDriver;
  * -- private constructors
  * -- static field of an instance of the class to be returned
  * -- leverage a public static getInstance() (our's is the getConnection() method)
- * @author kirkhahn
+ * @author 
  *
  */
 public class ConnectionUtil {

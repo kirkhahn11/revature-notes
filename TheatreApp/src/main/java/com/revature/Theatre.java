@@ -88,7 +88,6 @@ public class Theatre {
 			
 			// we have to check if the seatNumber provided is < or > the midVal
 			int cmp = midVal.getSeatNumber().compareTo(seatNumber);
-			
 			// 0 if equal, -1 if less than, 1 if greater than
 			
 			

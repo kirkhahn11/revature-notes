@@ -25,7 +25,6 @@ public class AccountDao implements IAccountDao{
 			
 			String sql = "INSERT INTO kirkh.accounts (balance, acc_owner) VALUES (?, ?) RETURNING kirkh.accounts.id";
 			
-			//prepared statement
 			PreparedStatement stat = conn.prepareStatement(sql);
 			stat.setDouble(1, a.getBalance());
 			stat.setInt(2, a.getOwnerId());
@@ -55,7 +54,7 @@ public class AccountDao implements IAccountDao{
 			String sql = "SELECT kirkh.accounts.id, kirkh.accounts.balance FROM kirkh.accounts\n"
 					+ "	INNER JOIN kirkh.users_account_jt \n"
 					+ "		ON kirkh.accounts.id = kirkh.users_account_jt.account 	\n"
-					+ "			WHERE kirkh.users_account_jt.acc_owner = ?;"; //this will have to be a joins
+					+ "			WHERE kirkh.users_account_jt.acc_owner = ?;"; 
 			
 			PreparedStatement stat = conn.prepareStatement(sql);
 			stat.setInt(1, userId);
@@ -81,11 +80,9 @@ public class AccountDao implements IAccountDao{
 	}
 
 	@Override
-	public List<Account> findAll() { // here we are making an actual query
+	public List<Account> findAll() { 
 		BasicConfigurator.configure();
-		//start with an empty ArrayList of accounts
 		List<Account> accountList = new ArrayList<Account>(); 
-		//obtain connection with try-with-resources
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			Statement stat = conn.createStatement();
 			String sql = "SELECT * FROM accounts";
@@ -93,7 +90,7 @@ public class AccountDao implements IAccountDao{
 			ResultSet rs = stat.executeQuery(sql);
 
 			while(rs.next()) {
-				int id = rs.getInt("id"); // you can specify the column number or name
+				int id = rs.getInt("id");
 				double balance = rs.getDouble("balance");
 				
 				Account a = new Account(id, balance);
@@ -103,22 +100,7 @@ public class AccountDao implements IAccountDao{
 			log.warn("SQL Exception occured when querying all accounts");
 			e.printStackTrace();
 		}
-		//create statement + sql string
-//		
-		
-		// send the statement to the DB
-		
-		//iterate through the response... while(rs.next())
-		
-			// grab data on each row for the account 
-		
-		// construct the account object
-		
-		//add the account object to the list 
-		
-		// then we have to use the ResultSet to iterate over the returned data set and create a list of account objects
 
-		// return the account list 
 		return accountList;
 	}
 
