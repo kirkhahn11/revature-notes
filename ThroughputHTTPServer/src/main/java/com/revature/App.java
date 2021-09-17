@@ -17,7 +17,7 @@ public class App {
 	private static final String INPUT_FILE = "/Users/kirkhahn/Desktop/revature-notes/ThroughputHTTPServer/src/main/resources/war_and_peace.txt";
 
 	// this is the variable passed to an executor to control thread-pool size
-	private static final int NUMBER_OF_THREADS = 4;
+	private static final int NUMBER_OF_THREADS = 1;
 	public static void main(String[] args) throws IOException {
 
 		

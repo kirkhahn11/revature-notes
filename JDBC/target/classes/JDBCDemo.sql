@@ -92,4 +92,4 @@ INSERT INTO kirkh.accounts (balance, acc_owner)
 SELECT kirkh.accounts.id, kirkh.accounts.balance FROM kirkh.accounts
 	INNER JOIN kirkh.users_account_jt 
 		ON kirkh.accounts.id = kirkh.users_account_jt.account
-			WHERE kirkh.users_account_jt.acc_owner = 8;
+			WHERE kirkh.users_account_jt.acc_owner = 1;

@@ -3,9 +3,21 @@ package com.revature.producerconsumerproblem;
 public class Consumer implements Runnable {
 	
 	public Holder data;
+	int max; 
+	
+	
+	public Consumer(Holder data, int max) {
+		super();
+		this.data = data;
+		this.max = max;
+	}
+
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		for(int i = 0; i < max; i++) {
+			int currentVal = this.data.getVal();
+			System.out.println("The Consumer got: " + currentVal);
+		}
 		
 	}
 
